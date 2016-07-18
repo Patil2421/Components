@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using System.Collections.Generic;
 
-namespace Champagn
+namespace YourProject
 {
 	public class MenuPage : ContentPage
 	{
