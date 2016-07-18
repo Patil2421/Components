@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace Champagn
+namespace YourProject
 {
 	public static class SessionManager
 	{
