@@ -7,7 +7,7 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace Champagn
+namespace YourProject
 {
     public partial class App : Application
     {
@@ -16,26 +16,14 @@ namespace Champagn
         #endregion
 
         #region Public Properties
-        public static double ScreenHeight { get; set; }
-        public static double ScreenWidth { get; set; }
 		public static RootPage RootPage { get; set; }
-		public static bool IsTest { get; set; }
-		public static int ExitPressCount{ get; set; }
-		public static string Username { get; set; }
 
         #endregion      
         public App()
         {
             // The root page of your application
 			InitializeComponent();
-
-			//MainPage = new NavigationPage (new LoginPage());
-			//MainPage = new NavigationPage (new HomePage());
-			//MainPage = new NavigationPage (new TemplateListPage());
-
-			//MainPage = App.RootPage = new RootPage();
-			//MainPage = new NavigationPage(new MyPage());
-			MainPage = new NavigationPage(new CustomiseLabelPage());
+			MainPage = App.RootPage = new RootPage();
         }
 
 		public static App Instance
