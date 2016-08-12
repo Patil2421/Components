@@ -1,22 +1,18 @@
-﻿using System;
-using Champagn;
-using Champagn.iOS;
+using System;
+using YourProject;
+using YourProject.iOS;
 using UIKit;
 
-[assembly: Xamarin.Forms.Dependency(typeof(Champagn.iOS.ScreenshotManager))]
-namespace Champagn.iOS
+[assembly: Xamarin.Forms.Dependency(typeof(YourProject.iOS.ScreenshotManager))]
+namespace YourProject.iOS
 {
 	public class ScreenshotManager : IScreenshotManager
 	{
-		public byte[] CaptureAsync(int height,int width)
+		public byte[] CaptureAsync()
 		{
 			var view = UIApplication.SharedApplication.KeyWindow.RootViewController.View;
 
-			view.Frame = new CoreGraphics.CGRect (0, 0, width, height);
-
-			CoreGraphics.CGSize newsize = view.Frame.Size;
-
-			UIGraphics.BeginImageContext(newsize);
+			UIGraphics.BeginImageContext(view.Frame.Size);
 
 			view.DrawViewHierarchy(view.Frame, true);
 			var image = UIGraphics.GetImageFromCurrentImageContext();
