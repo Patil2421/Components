@@ -1,18 +1,18 @@
-﻿using System;
-using Champagn;
-using Champagn.Droid;
+using System;
+using YourProject;
+using YourProject.Droid;
 using Android.App;
 using Android.Graphics;
 using System.IO;
 
-[assembly: Xamarin.Forms.Dependency(typeof(Champagn.Droid.ScreenshotManager))]
-namespace Champagn.Droid
+[assembly: Xamarin.Forms.Dependency(typeof(YourProject.Droid.ScreenshotManager))]
+namespace YourProject.Droid
 {
 	public class ScreenshotManager : IScreenshotManager
 	{
 		public static Activity Activity { get; set; }
 
-		public byte[] CaptureAsync(int height,int width)
+		public byte[] CaptureAsync()
 		{
 			if(Activity == null)
 			{
@@ -20,9 +20,6 @@ namespace Champagn.Droid
 			}
 
 			var view = Activity.Window.DecorView;
-
-			view.SetMinimumHeight(height);
-			view.SetMinimumWidth(width);
 
 			view.DrawingCacheEnabled = true;
 
